@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformación Real | Asesoría Nutricional y Entrenamiento</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Neutral & Teal -->
+    <!-- Application Structure Plan: A single-column, goal-oriented landing page. The structure guides the user from an engaging question (Hero) through the value proposition (Benefits), a clear process (How It Works), to a decisive Call to Action. This linear, persuasive flow is optimal for converting a visitor into a lead for a simple service offering, prioritizing clarity and a single user goal over complex navigation. -->
+    <!-- Visualization & Content Choices: The source is an ad, not a data report. Goal: Persuade. Method: The primary "visualizations" are the page layout, icons (Unicode), and clean typography. To meet the technical requirement for a chart, a simple Doughnut chart (Chart.js) is used to represent the 'Complete Plan' (Nutrition, Training, Support). Interaction: Subtle hover effects on the CTA button. This approach maintains the ad's simplicity while adding a professional, visual element that reinforces the comprehensive nature of the service. No SVG/Mermaid used. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #f5f3ff, #f0fdfa);
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-gray-800">
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+        <header class="text-center py-20 md:py-32">
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-gray-900 mb-6">
+                ¿Estás listo para un cambio <span class="text-teal-600">real</span>?
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-600">
+                Deja atrás las dietas que no funcionan y descubre un plan hecho a tu medida.
+            </p>
+        </header>
+
+        <main>
+            <section id="benefits" class="py-16 sm:py-24">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 mb-4">Tu transformación empieza aquí</h2>
+                    <p class="text-lg text-gray-600 mb-12">
+                        Como nutriólogo y entrenador personal, mi misión es darte las herramientas para que logres resultados duraderos. No se trata de una dieta, se trata de un nuevo estilo de vida.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200">
+                            <span class="text-4xl">⚡️</span>
+                            <h3 class="text-xl font-semibold text-gray-900 mt-4 mb-2">Aumenta tu Energía</h3>
+                            <p class="text-gray-600">
+                                Siente la vitalidad que te da una nutrición inteligente y despídete del cansancio crónico.
+                            </p>
+                        </div>
+                        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200">
+                            <span class="text-4xl">💪</span>
+                            <h3 class="text-xl font-semibold text-gray-900 mt-4 mb-2">Transforma tu Cuerpo</h3>
+                            <p class="text-gray-600">
+                                Logra tus objetivos, ya sea perder grasa, ganar músculo o simplemente sentirte más fuerte y saludable.
+                            </p>
+                        </div>
+                        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200">
+                            <span class="text-4xl">🌟</span>
+                            <h3 class="text-xl font-semibold text-gray-900 mt-4 mb-2">Recupera tu Confianza</h3>
+                            <p class="text-gray-600">
+                                Ver resultados reales y sentirte bien contigo mismo es el mayor impulso para tu autoestima.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="how-it-works" class="py-16 sm:py-24 gradient-bg rounded-2xl">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 mb-4">Un Plan Integral Diseñado Para Ti</h2>
+                    <p class="text-lg text-gray-600 mb-12">
+                        Mi enfoque es 100% personalizado. Te guiaré a través de tres pilares fundamentales para asegurar que alcances tus metas de forma sostenible.
+                    </p>
+                    <div class="chart-container">
+                        <canvas id="planChart"></canvas>
+                    </div>
+                    <p class="mt-4 text-gray-700 font-semibold">Visualización de Tu Plan Completo</p>
+                </div>
+            </section>
+
+            <section id="cta" class="text-center py-20 sm:py-32">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mb-6">Deja de posponerlo. El mejor momento para empezar es <span class="text-teal-600">ahora</span>.</h2>
+                <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-600 mb-8">
+                    Da el primer paso hacia la versión más saludable y fuerte de ti mismo.
+                </p>
+                <a href="tel:PON-TU-NUMERO-AQUI" class="inline-block bg-teal-600 text-white font-semibold text-lg px-8 py-4 rounded-xl shadow-lg hover:bg-teal-700 transition-transform transform hover:scale-105">
+                    Agendar mi Consulta
+                </a>
+            </section>
+        </main>
+
+        <footer class="text-center py-10 border-t border-gray-200">
+            <p class="text-gray-600 font-semibold">Nimrod Castillo - Nutriólogo y Entrenador Personal</p>
+            <p class="text-gray-500 mt-2">📍 Pumping Iron Gym, Mérida, Yucatán</p>
+            <p class="text-gray-500 mt-1">📞 Manda un mensaje para más información</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const ctx = document.getElementById('planChart').getContext('2d');
+            const planChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Nutrición Personalizada', 'Entrenamiento Eficaz', 'Soporte y Seguimiento'],
+                    datasets: [{
+                        label: 'Componentes del Plan',
+                        data: [33.3, 33.3, 33.4],
+                        backgroundColor: [
+                            'rgba(13, 148, 136, 0.8)',
+                            'rgba(45, 212, 191, 0.8)',
+                            'rgba(15, 118, 110, 0.8)'
+                        ],
+                        borderColor: [
+                            '#ffffff'
+                        ],
+                        borderWidth: 4,
+                        hoverOffset: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                padding: 20,
+                                font: {
+                                    size: 14,
+                                    family: "'Inter', sans-serif"
+                                }
+                            }
+                        },
+                        tooltip: {
+                            enabled: true,
+                             callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed !== null) {
+                                        label += context.parsed.toFixed(1) + '%';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
